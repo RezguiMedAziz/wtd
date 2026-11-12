@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root { min-height: 100%; }
+  body {
+    @apply bg-brand-cream font-display text-brand-ink antialiased;
+  }
+  :focus-visible { outline: 3px solid #5CC2FA; outline-offset: 3px; border-radius: 12px; }
+}
+
+@layer components {
+  .btn-pop {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-[3px] border-brand-ink px-6 py-3 text-lg font-bold shadow-soft transition-transform hover:-translate-y-0.5 active:translate-y-0.5;
+  }
+  .chalk-card { @apply rounded-[2rem] border-[3px] border-dashed border-brand-ink/70 bg-white/70; }
+  .sticker-card { @apply rounded-[2rem] border-[3px] border-brand-ink bg-white shadow-soft; }
+  /* bubbly wordmark matching the logo lettering */
+  .wordmark { -webkit-text-stroke: 7px #141414; paint-order: stroke fill; text-shadow: 4px 5px 0 #141414; letter-spacing: 0.02em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; }
+}
